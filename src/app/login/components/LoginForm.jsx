@@ -21,11 +21,12 @@ export default function LoginForm() {
                 callbackUrl: "/",
                 redirect: false,
             });
-            if (response.ok) {
+            if (response?.ok) {
+                form.reset();
                 toast.success("Logged In successfully");
                 router.push("/");
-                form.reset();
-            } else {
+            }
+            else {
                 toast.error("FAILED to Log In");
             }
             //console.log({ email, password });
@@ -34,6 +35,7 @@ export default function LoginForm() {
             toast.error("FAILED to Log In");
         }
     };
+    
     return (
         <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-8">
             <label className="form-control w-full">

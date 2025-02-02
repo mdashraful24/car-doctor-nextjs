@@ -17,7 +17,7 @@ export default function SocialLogin() {
     useEffect(() => {
         if (session?.status == "authenticated") {
             router.push("/");
-            toast.success("Logged in Successfully using.");
+            toast.success("Logged in Successfully");
         }
     }, [session?.status]);
 
